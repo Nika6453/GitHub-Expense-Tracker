@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расходы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Трекер расходов</h1>
+    <span>все данные хранятся в браузере</span>
+  </header>
+
+  <!-- TOTAL -->
+  <div class="total-card">
+    <div>
+      <div class="total-label">Итого потрачено</div>
+      <div class="total-count" id="total-count">0 трат</div>
+    </div>
+    <div class="total-amount" id="total-amount">0 ₸</div>
+  </div>
+
+  <div class="cols">
+    <!-- FORM -->
+    <div class="form-card">
+      <h2>Добавить трату</h2>
+
+      <div class="field">
+        <label for="f-cat">Категория</label>
+        <select id="f-cat">
+          <option value="food">Еда</option>
+          <option value="transport">Транспорт</option>
+          <option value="fun">Развлечения</option>
+          <option value="subs">Подписки</option>
+          <option value="other">Прочее</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-amount">Сумма (тенге)</label>
+        <input type="number" id="f-amount" placeholder="0" min="1" step="1">
+      </div>
+
+      <div class="field">
+        <label for="f-date">Дата</label>
+        <input type="date" id="f-date">
+      </div>
+
+      <div class="field">
+        <label for="f-desc">Описание (необязательно)</label>
+        <input type="text" id="f-desc" placeholder="Например: обед в кафе">
+      </div>
+
+      <button class="btn-add" id="btn-add">+ Добавить трату</button>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="cats-card">
+      <h2>По категориям</h2>
+      <div id="cats-list">
+        <div class="empty" style="padding: 2rem 1rem; border: none;">
+          <small>Пока нет трат</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPENSES LIST -->
+  <div class="list-section">
+    <h2>
+      История трат
+      <button class="btn-clear" id="btn-clear">Удалить все</button>
+    </h2>
+    <div id="expenses-list"></div>
+  </div>
+
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
